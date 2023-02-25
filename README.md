@@ -16,10 +16,6 @@ This repository contains the code to send emails using Nodemailer in a NestJS ap
 
 ```bash
 • npm install 
-
-• npm install nodemailer @nestjs-modules/mailer
-
-• npm install --save @nestjs/config
 ```
 
 ## Configuration
