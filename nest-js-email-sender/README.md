@@ -8,19 +8,21 @@ const installationSteps = [
   'Clone the repository to your local machine.',
   'Navigate to the root directory of the project in your terminal.',
   'Run the following command to install the required Node packages:',
-  'npm install',
+  '```npm install```',
 ];
 
 const configurationSteps = [
   'Create a `.env` file in the root directory of the project.',
   'Add the following variables to the `.env` file, replacing the values with your own:',
+  '```.env',
   'DATABASE_URL=your-database-url',
   'API_KEY=your-api-key',
+  '```',
 ];
 
 const usageInstructions = [
   'To run the project, use the following command:',
-  'npm start',
+  '```npm start```',
 ];
 
 const readmeContent = `# ${projectName}
@@ -31,13 +33,13 @@ ${projectDescription}
 - ${prerequisites.join('\n- ')}
 
 ## Installation
-${installationSteps.map(step => `- ${step}`).join('\n')}
+${installationSteps.join('\n')}
 
 ## Configuration
-${configurationSteps.map(step => `- ${step}`).join('\n')}
+${configurationSteps.join('\n')}
 
 ## Usage
-${usageInstructions.map(instruction => `- ${instruction}`).join('\n')}
+${usageInstructions.join('\n')}
 
 `;
 
@@ -47,4 +49,6 @@ fs.writeFile('README.md', readmeContent, err => {
     return;
   }
   console.log('README file created successfully!');
+  console.log('\nCopy the following code to your clipboard:\n');
+  console.log('```\n' + readmeContent + '\n```');
 });
