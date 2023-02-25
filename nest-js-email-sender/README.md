@@ -1,54 +1,35 @@
-const fs = require('fs');
+# Sending Emails with Nodemailer in NestJS
 
-const projectName = 'My Awesome Project';
-const projectDescription = 'This project is awesome and does amazing things!';
-const prerequisites = ['Node.js and npm installed on your machine', 'An understanding of JavaScript'];
-
-const installationSteps = [
-  'Clone the repository to your local machine.',
-  'Navigate to the root directory of the project in your terminal.',
-  'Run the following command to install the required Node packages:',
-  '```npm install```',
-];
-
-const configurationSteps = [
-  'Create a `.env` file in the root directory of the project.',
-  'Add the following variables to the `.env` file, replacing the values with your own:',
-  '```.env',
-  'DATABASE_URL=your-database-url',
-  'API_KEY=your-api-key',
-  '```',
-];
-
-const usageInstructions = [
-  'To run the project, use the following command:',
-  '```npm start```',
-];
-
-const readmeContent = `# ${projectName}
-
-${projectDescription}
+This repository contains the code to send emails using Nodemailer in a NestJS application. Follow the steps below to set up the project on your local machine.
 
 ## Prerequisites
-- ${prerequisites.join('\n- ')}
+
+•	Node.js and npm installed on your machine
+
+•	An email account (e.g. Gmail, Outlook) to send emails from
 
 ## Installation
-${installationSteps.join('\n')}
+
+1.	Clone the repository to your local machine.
+2.	Navigate to the root directory of the project in your terminal.
+3.	Run the following command to install the required Node packages:
+
+```bash
+• npm install 
+
+• npm install nodemailer @nestjs-modules/mailer
+
+• npm install --save @nestjs/config
+```
 
 ## Configuration
-${configurationSteps.join('\n')}
 
-## Usage
-${usageInstructions.join('\n')}
-
-`;
-
-fs.writeFile('README.md', readmeContent, err => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log('README file created successfully!');
-  console.log('\nCopy the following code to your clipboard:\n');
-  console.log('```\n' + readmeContent + '\n```');
-});
+```python
+1.	Create a .env file in the root directory of the project.
+2.	Add the following variables to the .env file, replacing the values with your own email account details:
+  .	SMTP_HOST=your-smtp-host
+  .	SMTP_PORT=your-smtp-port
+  .	SMTP_USER=your-email-address
+  .	SMTP_PASSWORD=your-email-password
+  .	SMTP_FROM=your-email-address
+```
